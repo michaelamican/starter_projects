@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>Sockets</title>
+    
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id='wrapper'>
+        <div id='emission'></div>
+        <div id='content'>
+            <form id='form'>
+            <div id='labels'>
+                <p>Your Name:</p>
+                <p>Dojo Location:</p>
+                <p>Favorite Language:</p>
+            </div>
+            
+            <div id='selections'>
+                <input id='name' type = 'text' placeholder='First/Last' name='name'>
+                <br>
+                <select id='location' name='location'>
+                    <option value='null'>Location</option>
+                    <option value='Seattle'>Seattle</option>
+                    <option value='Mountain View'>Mountain View</option>
+                    <option value='East Bay'>East Bay</option>
+                    <option value='Burbank'>Burbank</option>
+                    <option value='Tulsa'>Tulsa</option>
+                    <option value='Chicago'>Chicago</option>
+                    <option value='Tysons'>Tyson's</option>
+                    <option value='Dallas'>Dallas</option>
+                </select>
+                <br>
+                <select id='languages' name='languages'>
+                    <option value='null'>Language</option>
+                    <option value='Python'>Python</option>
+                    <option value='Ruby'>Ruby</option>
+                    <option value='C++'>C++</option>
+                    <option value='C#'>C#</option>
+                    <option value='Java'>Java</option>
+                    <option value='Javascript'>Javascript</option>
+                    <option value='.Net'>.Net</option>
+                    <option value='jQuery'>jQuery</option>
+                    <option value='HTML'>HTML</option>
+                    <option value='CSS'>CSS</option>
+                    <option value='Flask'>Flask</option>
+                    <option value='Django'>Django</option>
+                    <option value='MySQL'>MySQL</option>
+                    <option value='SQLlite'>SQLlite</option>
+                    <option value='MongoDB'>MongoDB</option>
+                    <option value='Express'>Express</option>
+                    <option value='angular'>Angular</option>
+                    <option value='React'>React</option>
+                    <option value='Node'>Node.js</option>
+                    <option value='Bootstrap'>Bootstrap</option>
+                    <option value='Blockchain'>Blockchain</option>
+                    <option value='CMD Line'>cmd</option>
+                    <option value='PHP'>PHP</option>
+                    <option value='Swift'>Swift</option>
+                    <option value='iOS'>iOS</option>
+                    <option value='Backbone'>Backbone</option>
+                    <option value='Other'>Other</option>
+                </select>
+            </div>
+            <p>Comment (optional):</p>
+            <textarea name='comment' id='comment'></textarea>
+            <br>
+            <button id='submit'>Submit</button>
+            </div>
+        </form>
+        <script type='text/javascript'>
+            $(document).ready(function(){
+
+            var socket = io();
+    
+            $('#form').submit(function(){
+                console.log('clicked');
+                var name = $("#name").val();
+                var location = $("#location").val();
+                var languages = $("#languages").val();
+                var comment = $("#comment").val();
+                socket.emit('posting_form', {'name' : name, 'location' : location, 'languages' : languages, 'comment' : comment});
+                console.log('emitted posted form to socket');
+                return false;
+            });
+            socket.on('updated_message',function(info){
+                console.log(info);
+                console.log('received data from socket');
+                $('#emission').append('<h4>' + info.info.name + '</h4><p>' + info.info.location +'</p><p>' + info.info.languages + '</p><p>'+info.info.comment+'</p><p>Your lucky number emitted by the server is ' + info.number + '.</p>');
+                    console.log('emission append was called and should have posted');
+                });
+            });
+
+            </script>
+    </div>
+</body>
+</html>

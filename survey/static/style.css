@@ -1,0 +1,72 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	font: Lato;
+}
+#wrapper{
+	margin: 0 auto;
+	padding: 5% 15%;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(360deg, mistyrose,whitesmoke, gainsboro, white);
+}
+#content{
+	padding: 40px;
+	border: 1px solid dimgray;
+	box-shadow: 2px 2px 6px darkgray;
+	background: ghostwhite;
+}
+#labels{
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 auto;
+}
+#selections{
+	display: inline-block;
+	vertical-align: top;
+}
+select{
+	width: 100px;
+	margin: 8px;
+}
+input{
+	margin-top: 10px;
+}
+textarea{
+	width: 400px;
+	height: 200px;
+	text-overflow: scroll;
+	box-shadow: 1px 1px 2px darkgray;
+	border: 1px solid dimgray;
+}
+button{
+	width: 150px;
+	height: 30px;
+	background: dodgerblue;
+	margin: 10px 0;
+	color: white;
+	border: 1px solid black;
+	box-shadow: 2px 2px 6px darkgray;
+	opacity: 0.8;
+}
+button:hover{
+	opacity: 1;
+}
+p{
+	margin: 10px;
+}
+#emission{
+	height: 100px;
+	width: 100%;
+	background-color: lavenderblush;
+	border: 1px solid black;
+	box-shadow: 1px 1px 2px dimgray;
+	padding: 10px;
+	margin: 20px 0;
+	overflow: scroll;
+}
+#emission p{
+	margin: 5px;
+	color: dimgray;
+}
