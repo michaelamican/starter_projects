@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Message Board</title>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id='wrapper'>
+		<h1>The Dojo Message Board</h1>
+		<hr>
+		<div class='new'>
+			<%if(messages.registration){%>
+				<%for (var x of messages.registration){%>
+					<%= x %>
+				<% } %>
+			<% } %>
+			<h3>Create a new message</h3>
+			<form id='message' name='mes' action='/new' method='POST'>
+				<h4>Name:</h4>
+				<input name='name' type='text'>
+				<h4>Message:</h4>
+				<textarea name='msg'></textarea><br>
+				<button type='submit' value='Post'>Post</button>
+			</form>
+		</div>
+		<div id='posts'>
+			<%for (x in mes){%>
+				<h3>Name: <%=mes[x].name%></h3>
+				<h4>Message: <%= mes[x].msg%></h4>
+					
+					<% for (var n of mes[x].comments) { %>
+						<h5>Name: <%= n.name %></h5>
+						<h5> <%= n.comt %> </h5>
+
+					<%}%>
+
+				<form id='comment' name='comment' method='POST' action='/comment'>
+					<input type='hidden' name='hide' value='<%=mes[x].id%>'>
+					<h5>Name:</h5>
+					<input type='text' name='name'>
+					<h5>Comment:</h5>
+					<textarea name='comt'></textarea>
+					<button type='submit' value='Comment'>Comment</button>
+				</form>
+			<%}%>
+		</div>
+	</div>
+</body>
+</html>
