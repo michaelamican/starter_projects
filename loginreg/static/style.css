@@ -1,0 +1,79 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border:box;
+	font: Quicksand;
+}
+#wrapper{
+	height: 100%;
+	width: 100%;
+	background-color: dimgray;
+}
+#navbar{
+	height: 30px;
+	width: 100%;
+	color: white;
+	background-color: gray;
+	box-shadow: 3px 0px 6px #404040;
+	padding: 8px 0;
+}
+.errorbox{
+	overflow: scroll;
+	background-color: darkgray;
+}
+button{
+	height: 40px;
+	width: 100px;
+	opacity: 0.8;
+	border: 1px solid black;
+	box-shadow: 2px 2px 2px black;
+	color: black;
+	background-color: gainsboro;
+}
+button:hover{
+	opacity: 1;
+	background-color: honeydew;
+}
+#login{
+	margin-left: 80%;
+}
+#img{
+	min-height: 300px;
+	max-height: 600px;
+	width: 100%;
+	background-image: url('/static/city.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 40%;
+}
+#reg{
+	height: 600px;
+	overflow: scroll;
+	width: 100%;
+	border: 1px solid black;
+	background: dimgray;
+	color: whitesmoke;
+}
+h5{
+	color: firebrick;
+	font-size: 12px;
+}
+label{
+	display: inline-block;
+	color: white;
+	font-weight: bolder;
+}
+h1{
+	font-size: 40px;
+	color: white;
+	text-shadow: 1px 1px 1px whitesmoke;
+	margin: 0 auto;
+}
+h4{
+	font-size: 20px;
+	color: whitesmoke;
+}
+#landing{
+	height: 100%;
+	width: 100%;
+}

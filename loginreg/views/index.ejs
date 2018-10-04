@@ -1,0 +1,60 @@
+
+<html>
+<head>
+	<title>Login Registration</title>
+	<link rel='stylesheet' type='text/css' href='static/style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='navbar'>
+			<div class='errorbox'>
+				<% if(messages.registration) { %>
+					<% for (var x of messages.registration) { %>
+						<h5><%= x %></h5>
+					<%}%>
+				<%}%>
+			</div>
+			<form id='login' method='post' action='/check'>
+				<label>Email: </label>
+				<input type='email' name='email' placeholder='email'>
+				<label>Password: </label>
+				<input type='password' name='pass' placeholder='password'>
+				<button type='submit'>Submit</button>
+			</form>
+		</div>
+		<div id='img'>
+			<h1>WELCOME</h1>
+		</div>
+		<div id='reg'>
+			<div class='errorbox'>
+				<% if(messages.registration) { %>
+					<% for (var x of messages.registration) { %>
+						<h5><%= x %></h5>
+					<%}%>
+				<%}%>
+			</div>
+			<form id='reg' method='post' action='/register'>
+				<h4>Enter your name:</h4>
+				<input type='text' placeholder = 'First Name' name='firstname'>
+				<input type='text' placeholder='Last Name' name='lastname'>
+				<h4>Choose a username:</h4>
+				<input type='text' placeholder='Username' name='username'>
+				<h4>Please provide email:</h4>
+				<input type='email' placeholder='Email' name='email'>
+				<h4>Verify your email:</h4>
+				<input type='email' placeholder='Retype Email' name='emailver'>
+				<h4>Type in a password:</h4>
+				<input type='password' placeholder='Password' name='pass'>
+				<h4>Verify your password:</h4>
+				<input type='password' placeholder='Retype Password' name='passver'>
+				<h4>Birthday</h4>
+				<input type='date' name='bday'>
+				<button type='submit'>Submit</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
