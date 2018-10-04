@@ -1,0 +1,35 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Lato;
+	color: ghostwhite;
+	text-shadow: 1px 1px 1px white;
+}
+#main{
+	padding: 35% 35%;
+	background: linear-gradient(30deg, dimgray, dimgray, dimgray, dimgray, black);
+	height: 100%;
+	width: 100%;
+}
+button{
+	height: 40px;
+	width: 120px;
+	background-color: lightgray;
+	color: dimgray;
+	text-shadow: 1px 1px 1px darkgray;
+	border-radius: 2px;
+	opacity: 0.8;
+	border: 1px solid black;
+	display: inline-block;
+	margin: 10px auto;
+	padding: 2px auto;
+}
+button:hover{
+	opacity: 1;
+	box-shadow: 1px 1px 1px darkgray;
+}
+button:click{
+	box-shadow: 1px 1px 1px ghostwhite;
+}
+
