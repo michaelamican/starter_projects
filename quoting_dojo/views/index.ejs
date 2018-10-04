@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Welcome!</title>
+
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='board'>
+			<form id='form' action='/process' method='post' name='form'>
+				<h2>Welcome to the Quoting Dojo</h2>
+				<hr>
+				<title>Author's name:</title>
+				<input name='name' id='name' type='text' maxlength='255' placeholder='First/Last'>
+				<title>Your quote:</title>
+				<textarea name='quote' id='quote' placeholder='Make it good!' maxlength='2000'></textarea>
+				<button type='submit' id='submit'>Add my quote!</button>
+			</form>
+			<hr>
+<!-- <%- JSON.stringify(messages) %> 
+	<% if(messages.form) { %>
+    	<% for (var x of messages.form) { %>
+      <h3><%= x %></h3>
+     <% } %>
+ <% } %> -->
+			<div id='box'>
+			<h2>Here are the quotes!</h2>
+			<%for(i in quotes){%>
+				<h4>"<%=quotes[i].quote%>"</h4>
+					<h5>-<%=quotes[i].name%> at <%=quotes[i].createdAt%></h5>
+				<%}%>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
