@@ -1,0 +1,25 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	font: Lato;
+}
+#main{
+	padding: 20%;
+	height: 100%;
+	width: 100%;
+}
+button{
+	background: ghostwhite;
+	opacity: 0.8;
+	border: 1px solid black;
+	border-radius: 2px
+	margin: 10px auto;
+	height: 40px;
+	width: 120px;
+	padding: 4px auto;
+}
+button:hover{
+	opacity: 1;
+	background: azure;
+}
