@@ -1,0 +1,98 @@
+*{
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: auto;
+}
+img{
+	height: 150px;
+	width: 180px;
+	margin: 20px;
+	border: 1px solid black;
+	box-shadow: 4px 4px 6px dimgray;
+	opacity: 0.7;
+	z-index: 50;
+	display: block;
+}
+img:hover{
+	height: 250px;
+	width: 300px;
+	border: 1px solid gainsboro;
+	box-shadow: 6px 6px 12px rebeccapurple;
+	opacity: 1;
+	z-index: 55;
+	display: block;
+}
+h2{
+	color: lightgray;
+	font: verdana;
+	font-size: 40px;
+	text-shadow: 2px 2px 4px gainsboro;
+}
+h4{
+	color: lightgray;
+	font: verdana;
+	font-size: 18px;
+	margin-top: 20px;
+}
+#wrapper{
+	background: linear-gradient(45deg, black, black, black, dimgray, lightgray);
+	height: 100%;
+	width: 100%;
+	padding: 80px 40px;
+}
+#main_content{
+	height: 100%;
+	width: 70%;
+	background: url('/images/blackrock.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: 2px solid dimgray;
+}
+#right{
+	height: 250px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 260px;
+}
+#left{
+	display: inline-block;
+}
+li{
+	margin: 20px auto;
+	opacity: 0.7;
+}
+li:hover{
+	opacity: 1;
+	text-shadow: 1px 1px 1px dimgray;
+}
+button{
+	height: 30px;
+	width: 80px;
+	border-radius: 2px;
+	background-color: dodgerblue;
+	border: 1px solid magenta;
+	font-size: 18px;
+	color: white;
+	text-shadow: 1px 1px 2px magenta;
+	box-shadow: 2px 2px 4px slategray;
+	margin: 15px auto;
+}
+button:hover{
+	background: linear-gradient(23deg indianred, salmon, gold, lemonchiffon, mintcream, chartreuse, teal, dodgerblue, mediumblue, indigo, darkviolet);
+	box-shadow: 8px 8px 8px magenta;
+	margin: 15px auto;
+}
+input{
+	display: block;
+	margin: 15px auto;
+	height: 40px;
+	width: 100px;
+	background-color: gainsboro;
+	font-size: 18px;
+	font-color: darkgray;
+}
+a{
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+}
