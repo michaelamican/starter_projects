@@ -1,0 +1,33 @@
+
+<html>
+<head>
+	<title><%for(var x in cats){%>
+		<%= cats[x].name %>
+		<%}%>
+	</title>
+	<link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+<body>
+	<div id='wrapper'>
+		<div id='center'>
+			<% for(var x in cats) {%>
+			<img id = 'profile' src='<%=cats[x].image%>'>
+			<div id='name'>
+				<h2><%= cats[x].name%></h2>
+			</div>
+			<div class='info'>
+				<h4>Breed: <%= cats[x].breed%></h4>
+			</div>
+			<div class='info'>
+				<h4>Age: <%= cats[x].age%></h4>
+			</div>
+			<div class='info'>
+				<h4>Hobbies:</h4>
+				<h4><%= cats[x].hobbies%></h4>
+			</div>
+			<h2><a href='cats'>Back</a></h2>
+			<%}%>
+		</div>
+	</div>
+</body>
+</html>
