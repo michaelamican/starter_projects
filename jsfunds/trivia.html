@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trivia Night</title>
+	<link rel= stylesheet href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+	<style>
+		*{
+			padding: 0 auto;
+			margin: 0 auto;
+			box-sizing: border-box;
+		}
+		#wrapper{
+			height: 100%;
+			width: 100%;
+			background-image: url('http://valeriegeary.com/wp-content/uploads/2014/02/white-scratched-background-2074.png');
+		}
+		.column{
+			min-width: 31.7%;
+			min-height: 100%;
+			display: inline-block;
+			margin: 10px;
+
+		}
+		h1{
+			color: white;
+			text-shadow: 2px 2px 4px dimgray;
+		}
+		h3{
+			background: white;
+			text-align: center;
+			padding: 20px;
+			border-radius: 2px;
+		}
+		#score{
+			color: ghostwhite;
+			text-shadow: 2px 2px 4px azure;
+			font-size: 2.5 rem;
+			margin-bottom: .5rem;
+			font-family: inherit;
+			font-weight: 500;
+			line-height: 1.2;
+
+		}
+		.questions{
+			background-color: dodgerblue;
+			text-align: center;
+			border-radius: 2px;
+			box-shadow: 4px 4px 8px dimgray;
+			padding: 80px 120px;
+			margin: 30px 75px;
+			z-index: 50;
+		}
+		.questions:hover{
+			background-color: deepskyblue;
+			padding: 90px 130px;
+			margin: 20px 65px;
+			box-shadow: 2px 2px 6px steelblue;
+			border-radius: 2px;
+			text-align: center;
+			font-size: 20px;
+			color: white;
+			text-decoration: blink, 1000;
+			text-shadow: 1px 1px 2px dodgerblue;
+			z-index: 100;
+		}
+		.questions:active{
+			background-color: azure;
+			text-align: center;
+			border-radius: 2px;
+			box-shadow: 4px 4px 8px ghostwhite;
+			padding: 90px 130px;
+			margin: 20px 65px;
+			color: black;
+			font-size: 20px;
+			border: 1px solid dodgerblue;
+			z-index: 100;
+		}
+	</style>
+	<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>	
+
+</head>
+<body>
+	<div id='wrapper'>
+
+		<div class='column' id='videogames' name='videogames'>
+			<h1>Score: <span id='score'></span></h1>
+			<h3>Video Games</h3>
+			<hr>
+			<div class='questions' class='easy'><p>100</p>
+			</div>
+			<div class='questions' class='medium'><p>200</p>
+			</div>
+			<div class='questions' class='hard'><p>300</p>
+			</div>
+
+		</div>
+		<div class='column' id='theatre' name='theatre'>
+			<h1></h1>
+			<h3>Theatre</h3>
+			<hr>
+			<div class='questions' class='easy'><p>100</p>
+			</div>
+			<div class='questions' class='medium'><p>200</p>
+			</div>
+			<div class='questions' class='hard'><p>300</p>
+			</div>
+
+		</div>
+		<div class='column' id='film' name='film'>
+			<h1></h1>
+			<h3>Film</h3>
+			<hr>
+			<div class='questions' class='easy'><p>100</p>
+			</div>
+			<div class='questions' class='medium'><p>200</p>
+			</div>
+			<div class='questions' class='hard'><p>300</p>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+
+			$('.questions').click(function(){
+				console.log('clicked');
+				// if(questions.parent.name == 'videogames'){
+					$.get('https://opentdb.com/api.php?amount=30&category=15&type=multiple', function displayQuestion(data){
+						question = data.results[0].question;
+						choices = (data.results[0].correct_answer + data.results[0].incorrect_answers[0] + data.results[0].incorrect_answers[1] + data.results[0].incorrect_answers[3]);
+			// 			difficulty = data.difficulty;
+			// 			if(data.difficulty == 'easy');
+						$('p').html("<p>" +question+"</p>" + "<select>"+choices+"</select>");
+						$('.questions').click(function(){
+							
+						})
+			// 				if(user.select() == data.correct_answer){
+			// 					score += 100;
+			// 				}
+			// 				else{
+			// 					score -= 100;
+			// 				}
+			// 		})
+			// 	}
+			// 	} else if(questions.parent.name == 'theatre'){
+			// 		$.get('https://opentdb.com/api.php?amount=30&category=13&type=multiple')
+			// 	} else if(questions.parent.name == 'film'){
+			// 		$.get('https://opentdb.com/api.php?amount=30&category=11&type=multiple')
+				})
+					console.log('retrieving data')
+			})
+		})
+	</script>
+</body>
+</html>
