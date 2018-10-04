@@ -1,0 +1,79 @@
+*{
+	margin: 0 auto;
+	padding: 0;
+	box-sizing: border-box;
+	font: Quicksand;
+	font-family: 'Quicksand', sans-serif;
+	text-align: center;
+}
+h2{
+	font-size: 2.25em;
+	margin: 1vh auto;
+	color: whitesmoke;
+	text-shadow: 1px 1px 1px white;
+}
+h4{
+	font-size: 1em;
+	margin: 1vh auto;
+	color: linen;
+	text-shadow: 1px 1px 1px snow;
+}
+h5{
+	font-size: 0.8em;
+	margin: 1vh auto;
+	color: gainsboro;
+	text-shadow: 1px 1px 1px snow;
+}
+#wrapper{
+	background: url('bokeh.jpg');
+	background-size: cover;
+	background-repeat: stretch;
+	z-index: 40;
+	height: 100%;
+	width: 100%;
+	padding: 1vh;
+}
+#board{
+	background: linear-gradient(#292929,#292929,#292929,#292929,#292929,#634c35);
+	color: white;
+	width: 85vw;
+	height: 90%;
+	opacity: 0.8;
+	margin: 1vh auto;
+	overflow: scroll;
+	border: 1px solid gray;
+}
+button{
+	background: linear-gradient(90deg, firebrick, firebrick, orangered, orangered, firebrick, firebrick, firebrick, firebrick, firebrick, firebrick, orangered, firebrick);
+	color: ghostwhite;
+	font-weight: bold;
+	opacity:0.8;
+	box-shadow: 1px 1px 1px white;
+	height: 3vh;
+	width: 7vw;
+	margin-left: 1vh;
+	vertical-align: top;
+}
+button:hover{
+	opacity: 1;
+}
+button :click{
+	background: linear-gradient(90deg, firebrick, firebrick, orangered, orangered, firebrick, firebrick, firebrick, firebrick, firebrick, firebrick, orangered, firebrick);
+	color: darkred;
+	opacity:1;
+	box-shadow: 1px 1px 1px white;
+}
+input{
+	width: 8vw;
+	height: 3vh;
+	vertical-align: top;
+	margin-right: 1vh;
+}
+textarea{
+	width: 28vw;
+	height: 10vh;
+	vertical-align: top;
+}
+hr{
+	margin: 1vh 0;
+}
