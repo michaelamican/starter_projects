@@ -1,1 +1,1 @@
-# starter_projects
+# starter_projects_MEAN
